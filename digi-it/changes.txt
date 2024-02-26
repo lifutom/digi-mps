@@ -1,0 +1,63 @@
+------------------------------------------------------------
+Datum:  18.06.2020
+Autor:  Lauterböck Thomas
+Typ:    Erweiterung
+Beschr: DigiSpare: Ersatzteil-Entnahme
+Letzte Änderung:  03.12.2020
+-----------------------------------------------------------
+Sourcen
+-----------------------------------------------------------
+edit                controllers             HomeController.asp                            x
+
+
+edit                _js/home                spareindex.js                                 x
+
+edit                views/home              index.asp                                     x
+edit                views/home              spareindex.asp                                x
+edit                views/home              spare.asp                                     x
+
+edit                views/spare             index.asp                                     x
+
+
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+
+------------------------------------------------------------
+Datum:  18.06.2020
+Autor:  Lauterböck Thomas
+Typ:    Erweiterung
+Beschr: DigiSpare: Ersatzteil-Entnahme
+Letzte Änderung:  18.06.2020
+-----------------------------------------------------------
+Sourcen
+-----------------------------------------------------------
+add virtuelles verzeichnis sparepart_images
+
+
+digiamdmin
+edit        models                          Plant.asp
+edit                                        Module.asp
+edit                                        Spare.asp
+
+
+digispare
+edit        controllers                     HomeController.asp
+
+
+edit        views/home                      index.asp
+new                                         spare.asp
+new                                         mycart.asp
+
+
+edit        views/shared                    Site.htmltemplate
+
+
+new         _js/home                        index.js
+new                                         spare.js
+new                                         mycart.js
+
+
+----------------------------------------------------------------
+DB   UpdateV34.sql
+----------------------------------------------------------------

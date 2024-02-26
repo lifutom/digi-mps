@@ -1,0 +1,48 @@
+<SCRIPT LANGUAGE=VBScript RUNAT=SERVER>
+
+<!-- METADATA TYPE="typelib" FILE="C:\Program Files\Common Files\System\ado\msado15.dll" -->
+
+Sub Application_OnStart()
+    Application.Lock
+
+    Application("ConStr") = "Provider=SQLNCLI10; DATA SOURCE=192.168.56.50\DEV2017; Provider=SQLOLEDB; DATABASE=digimps; USER ID=sa;PASSWORD=Iglahong6x;Current Language=german;"
+
+    Application("version")="1.0"
+    Application("dbversion")="1.0"
+    Application("domain")="lauterboeck.local"
+    Application("admin")="thomas"
+    Application("tempdir")="C:\TEMP"
+    Application("root") = "digispare"
+    Application("mailserver")="mail.lauterboeck.at"
+    Application.Unlock
+End Sub
+
+
+Sub Session_OnStart()
+
+    Session.Timeout = 240
+
+    Set Session("curADConn") = Server.CreateObject("ADODB.Connection")
+
+End Sub
+
+
+Sub Session_OnEnd()
+
+    Dim ADConn : Set ADConn = Session("curADConn")
+
+    If ADConn.State = 1 Then
+
+        ADConn.Close
+
+    End If
+
+    Session.Timeout = 11
+
+    Set objFs = Nothing
+
+End Sub
+
+
+
+</SCRIPT>

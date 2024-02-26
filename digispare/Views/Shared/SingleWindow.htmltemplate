@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <!-- <meta charset="ansi">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>DigiMPS MSD</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="<%=CurRootFile%>/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="<%=CurRootFile%>/css/mdb.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="<%=CurRootFile%>/css/style.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="<%=CurRootFile%>/js/jquery-3.3.1.min.js"></script>
+
+    <!-- jQueryValidation -->
+    <script src="<%=CurRootFile%>/js/modules/jquery-validation/jquery.validate.min.js"></script>
+    <script src="<%=CurRootFile%>/js/modules/jquery-validation/additional-methods.min.js" type="text/javascript"></script>
+    <script src="<%=CurRootFile%>/js/modules/jquery-validation/localization/messages_<%=Session("lang")%>.js" type="text/javascript"></script>
+
+    <!-- DataTables Select CSS -->
+    <link href="<%=CurRootFile%>/css/addons/datatables.min.css" rel="stylesheet">
+    <link href="<%=CurRootFile%>/css/addons/datatables-select.min.css" rel="stylesheet">
+    <link href="<%=CurRootFile%>/css/addons/directives.min.css" rel="stylesheet">
+
+    <!-- DataTables Select CSS -->
+    <script src="<%=CurRootFile%>/js/addons/datatables.min.js" type="text/javascript"></script>
+    <script src="<%=CurRootFile%>/js/addons/datatables-select.min.js" type="text/javascript"></script>
+    <script src="<%=CurRootFile%>/js/addons/mdb-editor.min.js" type="text/javascript"></script>
+
+    <!-- Utils -->
+    <script src="<%=CurRootFile%>/js/modules/myutil.1.0.js" type="text/javascript"></script>
+
+    <!-- Moments -->
+    <script src="<%=CurRootFile%>/js/modules/moment-with-locales.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fixed-sn grey-skin">
+
+    <!-- asp vaiables for javascript -->
+    <input id="CurRootFile" name="CurRootFile" type="hidden" value="<%=CurRootFile%>">
+    <input id="SysAdm" name="SysAdm" type="hidden" value="<%=SysAdm%>">
+    <!-- asp vaiables for javascript -->
+
+    <!--Main layout-->
+    <!--<main>-->
+        <div class="container-fluid">
+             <%ContentPlaceHolder()%>
+        </div>
+        <!--Footer-->
+        <div class="text-center">
+            <a href="javascript:window.close();"type="button" id="successbtn" class="btn btn-cyan waves-effect">Schlieﬂen</a>
+        </div>
+    <!--</main>-->
+    <!--Main layout-->
+    
+</body>
+
+
+<!-- SCRIPTS -->
+<!-- Tooltips -->
+<script type="text/javascript" src="<%=curRootFile%>/js/popper.min.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="<%=curRootFile%>/js/bootstrap.min.js"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="<%=curRootFile%>/js/mdb.min.js"></script>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>DigiMPS MSD</title>
+
+
+    <!-- FlipClock CSS -->
+    <link href="<%=curRootFile%>/css/flipclock.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="<%=CurRootFile%>/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="<%=CurRootFile%>/css/mdb.css" rel="stylesheet">
+
+    <!-- TimePicker -->
+    <link rel="stylesheet" href="<%=CurRootFile%>/js/modules/timepicker/css/bootstrap-datetimepicker.min.css">
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="<%=CurRootFile%>/js/jquery-3.3.1.min.js"></script>
+
+    <!-- FlipClock -->
+    <script type="text/javascript" src="<%=CurRootFile%>/js/flipclock.min.js"></script>
+
+    <!-- jQueryValidation -->
+    <script src="<%=CurRootFile%>/js/modules/jquery-validation/jquery.validate.min.js"></script>
+    <script src="<%=CurRootFile%>/js/modules/jquery-validation/additional-methods.min.js" type="text/javascript"></script>
+    <script src="<%=CurRootFile%>/js/modules/jquery-validation/localization/messages_<%=Session("lang")%>.js" type="text/javascript"></script>
+
+    <!-- Utils -->
+    <script src="<%=CurRootFile%>/js/modules/myutil.1.0.js" type="text/javascript"></script>
+
+    <!-- Moments -->
+    <script src="<%=CurRootFile%>/js/modules/timepicker/moment-with-locales.js" type="text/javascript"></script>
+
+    <!-- Cookie Plugin -->
+    <script type="text/javascript" src="<%=curRootFile%>/js/js.cookie.js"></script>
+    <script type="text/javascript" src="<%=curRootFile%>/js/cookies.1.0.js"></script>
+
+
+</head>
+
+<body class="fixed-sn homepage-v1">
+    <!-- Central Modal Medium Danger -->
+    <div class="modal fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-danger" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Warnung</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p><span class="warningmsg"></span></p>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" id="warningbtn" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Weiter</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Central Modal Medium Danger-->
+    <!-- Central Modal Medium Success -->
+    <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="mySuccessModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Warnung</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p><span class="successmsg"></span></p>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" id="successbtn" class="btn btn-outline-success waves-effect" data-dismiss="modal">Weiter</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Central Modal Medium Success -->
+    <!-- Central Modal Cancel/Weiter -->
+    <div class="modal fade" id="decision" tabindex="-1" role="dialog" aria-labelledby="myDecisionModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-info" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Frage</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p><span class="decisionmsg"></span></p>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <button class="btn btn-danger" data-dismiss="modal">Abbrechen</button>&nbsp;&nbsp;&nbsp;
+                    <a type="button" id="decisionbtn" class="btn btn-info waves-effect" data-dismiss="modal">Ok</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Central Modal Cancel/Weiter -->
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <div class="float-left ml-1 mt-1"><img src="<%=curRootFile%>/Images/msd.png" alt="logo" title="MSD Austria" width="40" height="40"></div>
+                    <h4 class="modal-title w-100 font-weight-bold">Anmelden</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fas fa-user prefix grey-text"></i>
+                        <input type="text" id="defaultForm-login" class="form-control validate">
+                        <label data-error="Geben Sie Ihren Loginnamen ein" data-success="Ok" for="defaultForm-login">ISID</label>
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" id="defaultForm-pass" class="form-control validate">
+                        <label data-error="Passwort ist nicht korrekt" data-success="Ok" for="defaultForm-pass">Passwort</label>
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-danger" data-dismiss="modal">Abbrechen</button>&nbsp;&nbsp;&nbsp;<button id="btnlogin" name="btnlogin" class="btn btn-default" onclick="">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <header>
+
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark stylish-color-dark">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#"><img src="<%=curRootFile%>/Images/msd.png" alt="logo" title="MSD Austria" width="50" height="50">&nbsp;DigiMPS MSD Wien&nbsp;(V<%=Application("version")%>/DB:<%=Application("dbversion")%>)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="javascript:clearinglink();"><%="Control:&nbsp;" & DevID%></a>
+        </nav>
+        <!--/.Navbar-->
+
+
+    </header>
+    <!-- Navigation -->
+
+    <!-- Main layout -->
+    <main>
+
+        <div style="margin-top: 0px" class="container-fluid">
+
+            <%ContentPlaceHolder()%>
+
+        </div>
+    </main>
+     <!--Footer-->
+    <footer class="page-footer text-center text-md-left stylish-color-dark pt-0 pl-0">
+        <div>
+            <div class="container">
+                <!--Grid row-->
+                <div class="row py-4 d-flex align-items-center">
+
+                    <!--Grid column-->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h6 class="mb-0 white-text">DigiMPS&nbsp;&copy;2019&nbsp;MSD-Wien</h6>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+</body>
+<!-- SCRIPTS -->
+<!-- Tooltips -->
+<script type="text/javascript" src="<%=curRootFile%>/js/popper.min.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="<%=curRootFile%>/js/bootstrap.min.js"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="<%=curRootFile%>/js/mdb.min.js"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="<%=curRootFile%>/js/modules/myutil.1.1.js"></script>
+
+
+
+</html>

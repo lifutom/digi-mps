@@ -1,0 +1,76 @@
+-------------------------------
+Datum:  04.12.2019
+-------------------------------
+Sourcen
+------------------------------------
+
+digiadmin
+--------------------------------------
+
+edit        ajax            getchartdata.asp
+
+
+edit        models          Quality.asp
+
+
+
+
+
+
+-------------------------------
+Datum:  28.11.2019
+-------------------------------
+Sourcen
+------------------------------------
+
+digiadmin
+--------------------------------------
+edit        controllers     Tier1Controller.asp      x
+
+
+edit        models          People.asp               x
+edit        models          Department.asp           x
+edit        models          Models.asp               x
+
+new         models          Capa.asp                 x
+new         models          CC.asp                   x
+new         models          Comlaint.asp             x
+new         models          DeliveryEsca.asp         x
+
+edit        ajax            settierboard.asp         x
+edit        ajax            saveitem.asp             x
+edit        ajax            deleteitem.asp           x
+edit        ajax            getchartdata.asp         x
+
+
+new         ajax            capa.asp                 x
+new         ajax            cc.asp                   x
+new         ajax            complaint.asp            x
+new         ajax            deliveryesca.asp         x
+
+edit        views/tier1     safety.asp               x
+
+new         views/tier1     capa.asp                 x
+new         views/tier1     cc.asp                   x
+new         views/tier1     complaint.asp            x
+new         views/tier1     deliveryesca.asp         x
+
+new         js/pages/tier1  capa.js                  x
+new         js/pages/tier1  cc.js                    x
+new         js/pages/tier1  complaint.js             x
+new         js/pages/tier1  deliveryesca.js          x
+
+
+
+
+
+--------------------------------------
+database
+--------------------------------------
+edit menuv14.sql
+
+UpdateV15.sql
+
+
+
+
